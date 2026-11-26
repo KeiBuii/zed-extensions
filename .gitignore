@@ -1,0 +1,15 @@
+# Rust build output
+target/
+**/target/
+
+# Compiled extension artifacts (Zed builds these)
+*.wasm
+extensions/*/grammars/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Local Claude settings
+.claude/settings.local.json
