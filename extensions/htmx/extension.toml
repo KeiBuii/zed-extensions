@@ -1,0 +1,42 @@
+id = "htmx"
+name = "HTMX"
+version = "0.1.0"
+schema_version = 1
+authors = ["Kei Bui"]
+description = "HTMX attribute completion (htmx-lsp) and snippets for HTML and server-side template languages."
+repository = "https://github.com/keibui/zed-extension"
+
+# Zed picks snippet files by lowercased language name. Every file is a copy of
+# snippets/html.json; a unit test keeps them identical and in sync with the
+# language list below.
+snippets = [
+    "./snippets/html.json",
+    "./snippets/php.json",
+    "./snippets/astro.json",
+    "./snippets/erb.json",
+    "./snippets/heex.json",
+    "./snippets/templ.json",
+    "./snippets/go html template.json",
+    "./snippets/jinja2.json",
+    "./snippets/html-jinja.json",
+    "./snippets/twig.json",
+    "./snippets/blade.json",
+    "./snippets/latte.json",
+]
+
+[language_servers.htmx-lsp]
+name = "htmx-lsp"
+languages = [
+    "HTML",
+    "PHP",
+    "Astro",
+    "ERB",
+    "HEEx",
+    "Templ",
+    "Go HTML Template",
+    "Jinja2",
+    "HTML-Jinja",
+    "Twig",
+    "Blade",
+    "Latte",
+]

@@ -1,0 +1,111 @@
+{
+  "htmx script tag": {
+    "prefix": "htmx_script",
+    "description": "Load htmx 2 from the jsDelivr CDN",
+    "body": "<script src=\"https://cdn.jsdelivr.net/npm/htmx.org@2.0.11/dist/htmx.min.js\"></script>"
+  },
+  "hx-get element": {
+    "prefix": "htmx_get",
+    "description": "Element that GETs a URL and swaps the response into a target",
+    "body": [
+      "<${1:div} hx-get=\"${2:/path}\" hx-target=\"${3:this}\" hx-swap=\"${4:innerHTML}\">",
+      "\t$0",
+      "</${1:div}>"
+    ]
+  },
+  "hx-post form": {
+    "prefix": "htmx_form",
+    "description": "Form submitted with hx-post, response swapped into a target",
+    "body": [
+      "<form hx-post=\"${1:/path}\" hx-target=\"${2:this}\" hx-swap=\"${3:outerHTML}\">",
+      "\t$0",
+      "\t<button type=\"submit\">${4:Submit}</button>",
+      "</form>"
+    ]
+  },
+  "hx-delete button": {
+    "prefix": "htmx_delete",
+    "description": "Delete button with confirmation that removes the closest row",
+    "body": "<button hx-delete=\"${1:/items/1}\" hx-confirm=\"${2:Are you sure?}\" hx-target=\"${3:closest tr}\" hx-swap=\"${4:outerHTML swap:500ms}\">${5:Delete}</button>"
+  },
+  "hx-put element": {
+    "prefix": "htmx_put",
+    "description": "Element that sends a PUT request",
+    "body": "<${1:button} hx-put=\"${2:/path}\" hx-target=\"${3:this}\" hx-swap=\"${4:outerHTML}\">$0</${1:button}>"
+  },
+  "hx-patch element": {
+    "prefix": "htmx_patch",
+    "description": "Element that sends a PATCH request",
+    "body": "<${1:button} hx-patch=\"${2:/path}\" hx-target=\"${3:this}\" hx-swap=\"${4:outerHTML}\">$0</${1:button}>"
+  },
+  "Active search": {
+    "prefix": "htmx_search",
+    "description": "Search input that queries as you type, debounced",
+    "body": [
+      "<input type=\"search\" name=\"${1:q}\" placeholder=\"${2:Search...}\"",
+      "\thx-get=\"${3:/search}\"",
+      "\thx-trigger=\"input changed delay:${4:500ms}, keyup[key=='Enter'], search\"",
+      "\thx-target=\"${5:#results}\"",
+      "\thx-indicator=\"${6:.htmx-indicator}\">",
+      "$0"
+    ]
+  },
+  "Infinite scroll": {
+    "prefix": "htmx_infinite",
+    "description": "Last item loads the next page when it scrolls into view",
+    "body": "<${1:tr} hx-get=\"${2:/items?page=2}\" hx-trigger=\"revealed\" hx-swap=\"afterend\">$0</${1:tr}>"
+  },
+  "Load on page load": {
+    "prefix": "htmx_lazy",
+    "description": "Lazy-load content once the element is loaded",
+    "body": [
+      "<div hx-get=\"${1:/path}\" hx-trigger=\"load\" hx-swap=\"${2:outerHTML}\">",
+      "\t${3:Loading...}",
+      "</div>"
+    ]
+  },
+  "Polling": {
+    "prefix": "htmx_poll",
+    "description": "Re-fetch content on an interval",
+    "body": "<div hx-get=\"${1:/status}\" hx-trigger=\"every ${2:2s}\" hx-swap=\"${3:innerHTML}\">$0</div>"
+  },
+  "Click to edit": {
+    "prefix": "htmx_edit",
+    "description": "Button that swaps its container for an edit form",
+    "body": "<button hx-get=\"${1:/items/1/edit}\" hx-target=\"${2:closest div}\" hx-swap=\"${3:outerHTML}\">${4:Edit}</button>"
+  },
+  "Boosted links": {
+    "prefix": "htmx_boost",
+    "description": "Turn regular links and forms inside into AJAX requests",
+    "body": [
+      "<${1:nav} hx-boost=\"true\">",
+      "\t$0",
+      "</${1:nav}>"
+    ]
+  },
+  "Out-of-band swap": {
+    "prefix": "htmx_oob",
+    "description": "Response fragment swapped into an element by id, outside the main target",
+    "body": "<${1:div} id=\"${2:notifications}\" hx-swap-oob=\"${3:true}\">$0</${1:div}>"
+  },
+  "Loading indicator": {
+    "prefix": "htmx_indicator",
+    "description": "Element shown while a request is in flight",
+    "body": "<${1:span} id=\"${2:spinner}\" class=\"htmx-indicator\">${3:Loading...}</${1:span}>"
+  },
+  "hx-vals": {
+    "prefix": "htmx_vals",
+    "description": "Extra values to send with the request",
+    "body": "hx-vals='{\"${1:key}\": \"${2:value}\"}'"
+  },
+  "hx-headers": {
+    "prefix": "htmx_headers",
+    "description": "Extra headers to send with the request",
+    "body": "hx-headers='{\"${1:X-CSRF-Token}\": \"${2:token}\"}'"
+  },
+  "Request lifecycle listener": {
+    "prefix": "htmx_on",
+    "description": "Inline handler for an htmx event",
+    "body": "hx-on::${1:after-request}=\"${2:console.log(event.detail)}\""
+  }
+}
