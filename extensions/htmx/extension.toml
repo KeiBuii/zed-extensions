@@ -4,7 +4,7 @@ version = "0.1.0"
 schema_version = 1
 authors = ["Kei Bui"]
 description = "HTMX attribute completion (htmx-lsp) and snippets for HTML and server-side template languages."
-repository = "https://github.com/keibui/zed-extension"
+repository = "https://github.com/HuongBuiPhu/zed-extensions"
 
 # Zed picks snippet files by lowercased language name. Every file is a copy of
 # snippets/html.json; a unit test keeps them identical and in sync with the
