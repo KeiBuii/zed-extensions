@@ -1,4 +1,4 @@
-# HTMX for Zed
+# HTMX Language Server for Zed
 
 Adds [htmx-lsp](https://github.com/ThePrimeagen/htmx-lsp) to Zed: completion and hover docs for `hx-*` attributes.
 

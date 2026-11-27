@@ -7,7 +7,7 @@ Each extension lives in its own folder under `extensions/`.
 
 | Extension | Description |
 |-----------|-------------|
-| [htmx](extensions/htmx) | HTMX attribute completion (htmx-lsp) and snippets for HTML and template languages |
+| [htmx-language-server](extensions/htmx-language-server) | HTMX attribute completion (htmx-lsp) and snippets for HTML and template languages |
 
 ## Layout
 

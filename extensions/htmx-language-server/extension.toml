@@ -1,5 +1,5 @@
-id = "htmx"
-name = "HTMX"
+id = "htmx-language-server"
+name = "HTMX Language Server"
 version = "0.1.0"
 schema_version = 1
 authors = ["Kei Bui"]
